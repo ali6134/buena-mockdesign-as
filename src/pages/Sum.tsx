@@ -1,6 +1,7 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../AppContext';
+import { FaEdit } from 'react-icons/fa';
 
 interface SumProps {
   setCurrentStep: (step: number) => void;
@@ -15,8 +16,21 @@ const Sum: React.FC<SumProps> = ({ setCurrentStep }) => {
     setCurrentStep(4);
   }, [setCurrentStep]);
 
-  const handleEdit = () => {
-    navigate('/salary-info'); 
+  const handleEdit = (step: number) => {
+    setCurrentStep(step);
+    switch (step) {
+      case 1:
+        navigate('/personal-info');
+        break;
+      case 2:
+        navigate('/contact-info');
+        break;
+      case 3:
+        navigate('/salary-info');
+        break;
+      default:
+        break;
+    }
   };
 
   const handleSubmit = () => {
@@ -26,25 +40,59 @@ const Sum: React.FC<SumProps> = ({ setCurrentStep }) => {
   const confirmSubmit = () => {
     setShowConfirm(false);
     alert('Form Submitted!');
-    window.location.href = 'https://www.buena.com/ueber-uns#open-roles';
+    window.location.href = 'https://www.example.com';
   };
 
   const cancelSubmit = () => {
     setShowConfirm(false);
   };
 
+  // Funktion zum Hinzufügen des Pluszeichens, falls es fehlt
+  const formatPhoneNumber = (phoneNumber: string) => {
+    return phoneNumber.startsWith('+') ? phoneNumber : `+${phoneNumber}`;
+  };
+
   return (
     <div className="bg-white shadow-md rounded p-6">
-      <h1 className="text-2xl font-bold mb-4">Sum</h1>
-      <p className="mb-2"><strong>Full Name:</strong> {state.fullName}</p>
-      <p className="mb-2"><strong>Email:</strong> {state.email}</p>
-      <p className="mb-2"><strong>Phone Number:</strong> {state.phoneNumber}</p>
-      <p className="mb-4"><strong>Salary:</strong> {state.salary}</p>
+      <h1 className="text-2xl font-bold mb-4">
+        Summary <span className="font-normal text-sm"></span>
+      </h1>
+      <div className="mb-4">
+        <div className="flex items-center mb-2">
+          <span className="font-bold">Full Name:</span>
+          <span className="ml-2">{state.fullName}</span>
+          <FaEdit
+            className="ml-2 text-black cursor-pointer"
+            onClick={() => handleEdit(1)}
+          />
+        </div>
+        <div className="flex items-center mb-2">
+          <span className="font-bold">Email:</span>
+          <span className="ml-2">{state.email}</span>
+          <FaEdit
+            className="ml-2 text-black cursor-pointer"
+            onClick={() => handleEdit(2)}
+          />
+        </div>
+        <div className="flex items-center mb-2">
+          <span className="font-bold">Phone Number:</span>
+          <span className="ml-2">{formatPhoneNumber(state.phoneNumber)}</span>
+          <FaEdit
+            className="ml-2 text-black cursor-pointer"
+            onClick={() => handleEdit(2)}
+          />
+        </div>
+        <div className="flex items-center mb-2">
+          <span className="font-bold">Salary:</span>
+          <span className="ml-2">{state.salary}</span>
+          <FaEdit
+            className="ml-2 text-black cursor-pointer"
+            onClick={() => handleEdit(3)}
+          />
+        </div>
+      </div>
       <div className="flex justify-between mt-4">
-        <button type="button" onClick={handleEdit} className="px-4 py-2 bg-gray-500 text-white rounded">
-          Edit
-        </button>
-        <button type="button" onClick={handleSubmit} className="px-4 py-2 bg-blue-500 text-white rounded">
+        <button type="button" onClick={handleSubmit} className="px-4 py-2 bg-black text-white rounded">
           Submit
         </button>
       </div>
@@ -67,3 +115,4 @@ const Sum: React.FC<SumProps> = ({ setCurrentStep }) => {
 };
 
 export default Sum;
+

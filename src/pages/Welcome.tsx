@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import colleaguesImage from '../assets/Colleagues.jpeg'; // Importiere das Bild
 
 const Welcome: React.FC = () => {
-  const navigate = useNavigate();
-
+    const navigate = useNavigate();
+  
   const handleNext = () => {
     navigate('/personal-info');
   };
@@ -18,7 +18,7 @@ const Welcome: React.FC = () => {
       <p className="text-lg mb-4">
         Joining Buena is a great idea because it simplifies property management, making it easier and more efficient for you to handle all your rental needs. Our platform provides top-notch tools and support, ensuring that your experience is seamless and hassle-free. TODO
       </p>
-      <button type="button" onClick={handleNext} className="px-4 py-2 bg-blue-500 text-white rounded">
+      <button type="button" onClick={handleNext} className="px-4 py-2 bg-black text-white rounded">
         Get Started
       </button>
     </div>

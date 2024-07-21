@@ -1,4 +1,76 @@
-/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes fillFromLeft {
+  0% {
+    background-color: #4b5563; 
+  }
+  100% {
+    background-color: black;
+  }
+}
+
+.fill-animation {
+  background-color: #4b5563; 
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+}
+
+.fill-animation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: 0; /* Sicherstellen, dass die Überlagerung unter dem Text liegt */
+}
+
+.fill-animation.animate::before {
+  transform: scaleX(1);
+}
+
+.fill-animation span {
+  position: relative;
+  z-index: 1; /* Sicherstellen, dass der Text über der Überlagerung liegt */
+}
+
+/* Animation for filling the box */
+@keyframes fillBox {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: black;
+  }
+}
+
+.custom-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: absolute;
+  width: 1.25rem; /* Größe des Vierecks */
+  height: 1.25rem;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid #d1d5db; /* Tailwind's border-gray-300 */
+  border-radius: 0.25rem; /* Tailwind's rounded */
+  background-color: transparent;
+  transition: background-color 0.4s ease;
+}
+
+.custom-radio:checked {
+  background-color: black;
+}
