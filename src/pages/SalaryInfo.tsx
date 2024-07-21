@@ -17,7 +17,8 @@ const SalaryInfo: React.FC<SalaryInfoProps> = ({ setCurrentStep }) => {
 
   useEffect(() => {
     setCurrentStep(3);
-  }, [setCurrentStep]);
+    console.log('Current state:', state);
+  }, [setCurrentStep, state]);
 
   const handleNext = () => {
     if (!salary) {
@@ -27,9 +28,10 @@ const SalaryInfo: React.FC<SalaryInfoProps> = ({ setCurrentStep }) => {
     if (!isAnimating) {
       setIsAnimating(true);
       setTimeout(() => {
+        console.log('Updating salary to:', salary);
         dispatch({ type: 'SET_SALARY', payload: salary });
         navigate('/sum');
-      }, 400); // Wartezeit sollte der Animationsdauer entsprechen
+      }, 400); 
     }
   };
 

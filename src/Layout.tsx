@@ -11,7 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className="flex flex-col items-center min-h-screen bg-gray-100">
       <header className="w-full p-4 bg-white shadow flex justify-end">
         <Link to="/">
-          <img src={logo} alt="Buena Logo" className="h-10" />
+          <img src={logo} alt="Buena Logo" className="h-11" />
         </Link>
       </header>
       <main className="w-full max-w-4xl p-4">

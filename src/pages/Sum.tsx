@@ -14,7 +14,8 @@ const Sum: React.FC<SumProps> = ({ setCurrentStep }) => {
 
   useEffect(() => {
     setCurrentStep(4);
-  }, [setCurrentStep]);
+    console.log('Current state:', state);
+  }, [setCurrentStep, state]);
 
   const handleEdit = (step: number) => {
     setCurrentStep(step);
@@ -40,7 +41,7 @@ const Sum: React.FC<SumProps> = ({ setCurrentStep }) => {
   const confirmSubmit = () => {
     setShowConfirm(false);
     alert('Form Submitted!');
-    window.location.href = 'https://www.example.com';
+    window.location.href = 'https://www.buena.com/ueber-uns#open-roles';
   };
 
   const cancelSubmit = () => {
@@ -55,7 +56,7 @@ const Sum: React.FC<SumProps> = ({ setCurrentStep }) => {
   return (
     <div className="bg-white shadow-md rounded p-6">
       <h1 className="text-2xl font-bold mb-4">
-        Summary <span className="font-normal text-sm"></span>
+        Summary 
       </h1>
       <div className="mb-4">
         <div className="flex items-center mb-2">
@@ -115,4 +116,3 @@ const Sum: React.FC<SumProps> = ({ setCurrentStep }) => {
 };
 
 export default Sum;
-

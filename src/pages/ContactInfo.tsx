@@ -36,12 +36,15 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ setCurrentStep }) => {
     setCurrentStep(2);
     setValue('email', state.email);
     setValue('phoneNumber', state.phoneNumber);
-  }, [setCurrentStep, setValue, state.email, state.phoneNumber]);
+    console.log('Current state:', state);
+  }, [setCurrentStep, setValue, state]);
 
   const onSubmit: SubmitHandler<IFormInputs> = data => {
     if (!isAnimatingNext) {
       setIsAnimatingNext(true);
       setTimeout(() => {
+        console.log('Updating email to:', data.email);
+        console.log('Updating phoneNumber to:', data.phoneNumber);
         dispatch({ type: 'SET_EMAIL', payload: data.email });
         dispatch({ type: 'SET_PHONE_NUMBER', payload: data.phoneNumber });
         navigate('/salary-info');

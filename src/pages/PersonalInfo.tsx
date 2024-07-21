@@ -4,8 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../AppContext';
-import '../index.css'; 
-
+import '../index.css';
 
 const schema = yup.object().shape({
   fullName: yup.string().required('Full Name is required').matches(/^[a-zA-Z\s]*$/, 'Full Name should contain only letters and spaces'),
@@ -38,7 +37,7 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ setCurrentStep }) => {
       setTimeout(() => {
         dispatch({ type: 'SET_FULL_NAME', payload: data.fullName });
         navigate('/contact-info');
-      }, 400); 
+      }, 400);
     }
   };
 

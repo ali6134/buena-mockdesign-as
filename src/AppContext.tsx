@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, Dispatch, ReactNode } from 'react';
+import React, { createContext, useReducer, useEffect, Dispatch, ReactNode } from 'react';
 
 interface State {
   fullName: string;
@@ -18,7 +18,8 @@ type Action =
   | { type: 'SET_FULL_NAME'; payload: string }
   | { type: 'SET_EMAIL'; payload: string }
   | { type: 'SET_PHONE_NUMBER'; payload: string }
-  | { type: 'SET_SALARY'; payload: string };
+  | { type: 'SET_SALARY'; payload: string }
+  | { type: 'RESET' };
 
 const reducer = (state: State, action: Action): State => {
   switch (action.type) {
@@ -30,6 +31,8 @@ const reducer = (state: State, action: Action): State => {
       return { ...state, phoneNumber: action.payload };
     case 'SET_SALARY':
       return { ...state, salary: action.payload };
+    case 'RESET':
+      return initialState;
     default:
       return state;
   }
@@ -49,8 +52,18 @@ interface AppProviderProps {
   children: ReactNode;
 }
 
+const LOCAL_STORAGE_KEY = 'appState';
+
 export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState, (initial) => {
+    const localData = localStorage.getItem(LOCAL_STORAGE_KEY);
+    return localData ? JSON.parse(localData) : initial;
+  });
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(state));
+  }, [state]);
+
   return (
     <AppContext.Provider value={{ state, dispatch }}>
       {children}
