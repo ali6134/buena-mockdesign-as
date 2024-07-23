@@ -42,7 +42,7 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ setCurrentStep }) => {
   };
 
   return (
-    <div className="bg-white shadow-md rounded p-6">
+    <div className="bg-[#f8f8f6] shadow-md rounded-3xl p-6">
       <h1 className="text-2xl font-bold mb-4">Personal Information</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <label className="block mb-2">

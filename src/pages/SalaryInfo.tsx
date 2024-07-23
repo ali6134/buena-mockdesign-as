@@ -47,9 +47,9 @@ const SalaryInfo: React.FC<SalaryInfoProps> = ({ setCurrentStep }) => {
   };
 
   return (
-    <div className="bg-white shadow-md rounded p-6">
+    <div className="bg-[#f8f8f6] shadow-md rounded-3xl p-6">
       <h1 className="text-2xl font-bold mb-4">
-        Salary Information <span className="font-normal text-sm">(Per month)</span>
+        How much are you earning right now? <span className="font-normal text-sm">(Per month, after tax, in dollars)</span>
       </h1>
       <form>
         <div className="grid grid-cols-1 gap-4 mb-4">
