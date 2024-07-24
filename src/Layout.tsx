@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FiMenu } from 'react-icons/fi';
 import { FaTimes } from 'react-icons/fa';
 import logo from './assets/buena-logo.png';
+import ProgressBar from './components/ProgressBar'; // Überprüfen Sie, ob dies der richtige Pfad ist
 
 interface LayoutProps {
   children: React.ReactNode;
+  currentStep: number;
+  totalSteps: number;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children, currentStep, totalSteps }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const isWelcomePage = location.pathname === '/';
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -37,6 +42,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </Link>
         </div>
       </header>
+      {!isWelcomePage && (
+        <div className="w-full flex justify-center my-4">
+          <ProgressBar
+            bgcolor="#000000"
+            completed={(currentStep / totalSteps) * 100}
+            currentStep={currentStep}
+            totalSteps={totalSteps}
+          />
+        </div>
+      )}
       {menuOpen && (
         <nav className="w-full bg-white shadow-md md:hidden">
           <div className="flex flex-col p-4">
@@ -47,7 +62,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
         </nav>
       )}
-      <main className="w-full max-w-4xl p-4">
+      <main className="w-full max-w-4xl p-4 mt-4">
         {children}
       </main>
     </div>
