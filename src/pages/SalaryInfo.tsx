@@ -53,7 +53,7 @@ const SalaryInfo: React.FC<SalaryInfoProps> = ({ setCurrentStep }) => {
       </h1>
       <form>
         <div className="grid grid-cols-1 gap-4 mb-4">
-          {['0 - 1.000', '1.000 - 2.000', '2.000 - 3.000', '3.000 - 4.000', 'Mehr als 4.000'].map((range) => (
+          {['0 - 1.000', '1.000 - 2.000', '2.000 - 3.000', '3.000 - 4.000', 'More than 4.000'].map((range) => (
             <div key={range} className="flex items-center">
               <motion.input
                 type="radio"
