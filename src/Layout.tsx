@@ -30,9 +30,9 @@ const Layout: React.FC<LayoutProps> = ({ children, currentStep, totalSteps }) =>
             </button>
           </div>
           <div className="hidden md:flex space-x-6 items-center">
-            <a href="https://app.buena.com/login" className="text-gray-800 hover:text-gray-900 bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-full transition duration-300 ease-in-out">Einloggen</a>
-            <a href="https://www.buena.com/ablauf" className="text-gray-500 hover:text-gray-700 transition duration-300 ease-in-out">So funktioniert's</a>
-            <a href="https://www.buena.com/ueber-uns" className="text-gray-500 hover:text-gray-700 transition duration-300 ease-in-out">Über Buena</a>
+            <a href="https://app.buena.com/login" className="text-gray-800 hover:text-gray-900 bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-full transition duration-300 ease-in-out">Login</a>
+            <a href="https://www.buena.com/ablauf" className="text-gray-500 hover:text-gray-700 transition duration-300 ease-in-out">How it works</a>
+            <a href="https://www.buena.com/ueber-uns" className="text-gray-500 hover:text-gray-700 transition duration-300 ease-in-out">About Buena</a>
             <a href="https://www.buena.com/jobs" className="text-gray-500 hover:text-gray-700 transition duration-300 ease-in-out">Jobs</a>
           </div>
         </div>
@@ -55,9 +55,9 @@ const Layout: React.FC<LayoutProps> = ({ children, currentStep, totalSteps }) =>
       {menuOpen && (
         <nav className="w-full bg-white shadow-md md:hidden">
           <div className="flex flex-col p-4">
-            <a href="https://app.buena.com/login" className="text-gray-500 hover:text-gray-900 px-4 py-2 rounded-full transition duration-300 ease-in-out">Einloggen</a>
-            <a href="https://www.buena.com/ablauf" className="text-gray-500 hover:text-gray-700 px-4 py-2 transition duration-300 ease-in-out">So funktioniert's</a>
-            <a href="https://www.buena.com/ueber-uns" className="text-gray-500 hover:text-gray-700 px-4 py-2 transition duration-300 ease-in-out">Über Buena</a>
+            <a href="https://app.buena.com/login" className="text-gray-500 hover:text-gray-900 px-4 py-2 rounded-full transition duration-300 ease-in-out">Login</a>
+            <a href="https://www.buena.com/ablauf" className="text-gray-500 hover:text-gray-700 px-4 py-2 transition duration-300 ease-in-out">How it works</a>
+            <a href="https://www.buena.com/ueber-uns" className="text-gray-500 hover:text-gray-700 px-4 py-2 transition duration-300 ease-in-out">About Buena</a>
             <a href="https://www.buena.com/jobs" className="text-gray-500 hover:text-gray-700 px-4 py-2 transition duration-300 ease-in-out">Jobs</a>
           </div>
         </nav>
