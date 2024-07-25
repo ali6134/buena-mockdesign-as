@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../AppContext';
 import { FaEdit } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 interface SumProps {
   setCurrentStep: (step: number) => void;
@@ -14,8 +15,7 @@ const Sum: React.FC<SumProps> = ({ setCurrentStep }) => {
 
   useEffect(() => {
     setCurrentStep(4);
-    console.log('Current state:', state);
-  }, [setCurrentStep, state]);
+  }, [setCurrentStep]);
 
   const handleEdit = (step: number) => {
     setCurrentStep(step);
@@ -40,8 +40,12 @@ const Sum: React.FC<SumProps> = ({ setCurrentStep }) => {
 
   const confirmSubmit = () => {
     setShowConfirm(false);
-    alert('Form Submitted!');
-    window.location.href = 'https://www.buena.com/ueber-uns#open-roles';
+    toast.success('Thank you for your time!', {
+      position: "top-center"
+    });
+    setTimeout(() => {
+      window.location.href = 'https://www.buena.com/ueber-uns';
+    }, 6000); 
   };
 
   const cancelSubmit = () => {
@@ -56,7 +60,7 @@ const Sum: React.FC<SumProps> = ({ setCurrentStep }) => {
   return (
     <div className="bg-[#f8f8f6] shadow-md rounded-3xl p-6 inner-box">
       <h1 className="text-2xl font-bold mb-4">
-        Summary 
+        Summary <span className="font-normal text-sm"></span>
       </h1>
       <div className="mb-4">
         <div className="flex items-center mb-2">
@@ -93,7 +97,7 @@ const Sum: React.FC<SumProps> = ({ setCurrentStep }) => {
         </div>
       </div>
       <div className="flex justify-between mt-4">
-        <button type="button" onClick={handleSubmit} className="px-4 py-2 bg-black text-white rounded">
+        <button type="button" onClick={handleSubmit} className="px-4 py-2 bg-[#f8e98e] text-black rounded">
           Submit
         </button>
       </div>

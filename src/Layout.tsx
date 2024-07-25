@@ -45,7 +45,7 @@ const Layout: React.FC<LayoutProps> = ({ children, currentStep, totalSteps }) =>
       {!isWelcomePage && (
         <div className="w-full flex justify-center my-4">
           <ProgressBar
-            bgcolor="#000000"
+            bgcolor="#f8e98e"
             completed={(currentStep / totalSteps) * 100}
             currentStep={currentStep}
             totalSteps={totalSteps}

@@ -7,6 +7,8 @@ import Sum from './pages/Sum';
 import Welcome from './pages/Welcome';
 import { AppProvider } from './AppContext';
 import Layout from './Layout';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -25,6 +27,7 @@ const App: React.FC = () => {
               <Route path="/sum" element={<Sum setCurrentStep={setCurrentStep} />} />
             </Routes>
           </Layout>
+          <ToastContainer />
         </div>
       </Router>
     </AppProvider>

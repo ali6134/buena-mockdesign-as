@@ -4,16 +4,16 @@
 
 @keyframes fillFromLeft {
   0% {
-    background-color: #4b5563; 
+    background-color: #f8e98e; 
   }
   100% {
-    background-color: black;
+    background-color: #fff9cc;
   }
 }
 
 .fill-animation {
-  background-color: #4b5563; 
-  color: white;
+  background-color: #f8e98e; 
+  color: black;
   border: none;
   cursor: pointer;
   padding: 0.5rem 1rem;
@@ -30,7 +30,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: black;
+  background-color: #fff9cc;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -83,4 +83,5 @@
   border: none !important;
   box-shadow: none !important;
 }
+
 

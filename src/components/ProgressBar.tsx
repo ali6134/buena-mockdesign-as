@@ -14,7 +14,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ bgcolor, completed, currentSt
         className="h-full rounded-full flex items-center justify-center"
         style={{ width: `${completed}%`, backgroundColor: bgcolor, transition: 'width 1s ease-in-out' }}
       >
-        <span className="text-white font-bold">{`${currentStep}/${totalSteps}`}</span>
+        <span className="text-black font-bold">{`${currentStep}/${totalSteps}`}</span>
       </div>
     </div>
   );
