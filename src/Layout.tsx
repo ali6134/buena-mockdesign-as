@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { FiMenu } from 'react-icons/fi';
 import { FaTimes } from 'react-icons/fa';
 import logo from './assets/buena-logo.png';
-import ProgressBar from './components/ProgressBar'; // Überprüfen Sie, ob dies der richtige Pfad ist
+import ProgressBar from './components/ProgressBar';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -21,8 +21,8 @@ const Layout: React.FC<LayoutProps> = ({ children, currentStep, totalSteps }) =>
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray">
-      <header className="w-full p-4 bg-white shadow flex justify-between items-center">
+    <div className="flex flex-col items-center min-h-screen bg-gray-">
+      <header className="w-full p-4 bg-white flex justify-between items-center">
         <div className="flex space-x-6 items-center">
           <div className="md:hidden">
             <button onClick={toggleMenu} className="text-gray-800 focus:outline-none">
@@ -62,8 +62,12 @@ const Layout: React.FC<LayoutProps> = ({ children, currentStep, totalSteps }) =>
           </div>
         </nav>
       )}
-      <main className="w-full max-w-4xl p-4 mt-4">
-        {children}
+      <main className="w-full flex justify-center p-4 mt-4">
+        <div className="w-full max-w-6xl bg-[#f8f8f6] rounded-lg p-6 inner-box"> {/* Äußere Box mit abgerundeten Ecken */}
+          <div className="w-full max-w-4xl mx-auto p-6 inner-box"> {/* Innere Box */}
+            {children}
+          </div>
+        </div>
       </main>
     </div>
   );

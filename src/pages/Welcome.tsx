@@ -10,7 +10,7 @@ const Welcome: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#f8f8f6] shadow-md rounded-3xl p-6">
+    <div className="bg-[#f8f8f6] shadow-md rounded-3xl p-6 inner-box">
       <h1 className="text-3xl font-bold mb-4">First step towards freedom.</h1>
       <div className="mb-4">
       <img src={colleaguesImage} alt="Colleagues interacting" className="w-full h-auto rounded" />

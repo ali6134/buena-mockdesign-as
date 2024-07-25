@@ -74,3 +74,13 @@
 .custom-radio:checked {
   background-color: black;
 }
+
+/* index.css */
+.inner-box {
+  background-color: #f8f8f6 !important;
+  transition: none !important;
+  border-radius: 1rem !important; /* Rundung der inneren Box */
+  border: none !important;
+  box-shadow: none !important;
+}
+

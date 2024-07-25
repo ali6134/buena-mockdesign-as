@@ -48,7 +48,7 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ setCurrentStep }) => {
         dispatch({ type: 'SET_EMAIL', payload: data.email });
         dispatch({ type: 'SET_PHONE_NUMBER', payload: data.phoneNumber });
         navigate('/salary-info');
-      }, 400); // Wartezeit sollte der Animationsdauer entsprechen
+      }, 400); 
     }
   };
 
@@ -57,12 +57,12 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ setCurrentStep }) => {
       setIsAnimatingBack(true);
       setTimeout(() => {
         navigate('/personal-info');
-      }, 0); // Wartezeit sollte der Animationsdauer entsprechen
+      }, 0); 
     }
   };
 
   return (
-    <div className="bg-[#f8f8f6] shadow-md rounded-3xl p-6">
+    <div className="bg-[#f8f8f6] shadow-md rounded-3xl p-6 inner-box">
       <h1 className="text-2xl font-bold mb-4">Contact Information</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <label className="block mb-2">
