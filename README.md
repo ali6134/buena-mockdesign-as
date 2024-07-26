@@ -18,7 +18,7 @@ Halli Hallo! Es freut mich euch die Case Study vorstellen zu können. Das Ganze 
 
 ## Technologies Used
 I was quit confused with the Notion page wherer the task is descriped since, but anyway, I used React & Typescript with Tailwind.css
-The reason why I used Tailwind.css is because the componnents are beautiful and you guys use it too. The Buttons on the top left are referncing to the actual Buena web components. Here we go wiht the official list of what I used. 
+The reason why I used Tailwind.css is because the components are beautiful and you guys use it too. The Buttons on the top left are referencing to the actual Buena web components. Here we go wiht the official list of what I used. I could have programmed a little bit more component based. Since in big applications this can get quite confusing, its always nice to programm component based.
 
 - React
 - TypeScript
@@ -34,13 +34,16 @@ To run this project, install it locally using npm:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/buena-rental-app.git
+git clone https://github.com/ali6134/buena-mockdesign-as.git
 
-# Navigate to the project directory
+# Navigate to the project directory (if necessary)
 cd buena-rental-app
 
-# Install dependencies
+# Install dependencies (if necessary)
 npm install
 
-# Start the development server
+# Start the dev server
 npm start
+
+# For the tests
+npm test
